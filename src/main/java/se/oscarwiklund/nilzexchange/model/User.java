@@ -32,8 +32,23 @@ public class User {
     public String getEmail() { return email; }
     public LocalDateTime getCreatedAt() { return created_at; }
 
+    public void setUsername(String username) { this.username = username; }
+    public void setPassword(String password) { this.password = password; }
+    public void setEmail(String email) { this.email = email; }
+    public void setCreatedAt(LocalDateTime created_at) { this.created_at = created_at; }
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Portfolio> portfolios = new ArrayList<>();
 
+    public void setPortfolios(List<Portfolio> portfolios) { this.portfolios = portfolios; }
 
+    public void addPortfolio(Portfolio portfolio) {
+        portfolios.add(portfolio);
+        portfolio.setUser(this);
+    }
+
+    public void removePortfolio(Portfolio portfolio) {
+        portfolios.remove(portfolio);
+        portfolio.setUser(null);
+    }
 }
