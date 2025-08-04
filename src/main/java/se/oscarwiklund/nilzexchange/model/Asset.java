@@ -62,6 +62,13 @@ public class Asset {
     public Long getTotalSharesOutstanding() { return totalSharesOutstanding; }
     public String getCurrency() { return currency; }
     public String getExchange() { return exchange; }
+    public void setSymbol(String symbol) { this.symbol = symbol; }
+    public void setName(String name) { this.name = name; }
+    public void setType(String type) { this.type = type; }
+    public void setCreatedAt(LocalDateTime created_at) { this.created_at = created_at; }
+    public void setTotalSharesOutstanding(Long totalSharesOutstanding) { this.totalSharesOutstanding = totalSharesOutstanding; }
+    public void setCurrency(String currency) { this.currency = currency; }
+    public void setExchange(String exchange) { this.exchange = exchange; }
 
 
 
